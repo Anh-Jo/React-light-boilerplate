@@ -1,7 +1,6 @@
 const path = require('path');
 const appPath = require('./path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
     mode: 'development',
     entry: [
@@ -32,6 +31,7 @@ module.exports = {
         extensions: ['.js', '.jsx'],
     },
     devServer: {
-        contentBase: '/src'
+        contentBase: '/src',
+        port:3000
     }
 };
