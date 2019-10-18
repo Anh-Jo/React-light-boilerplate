@@ -1,8 +1,11 @@
 import React from 'react'
-import { hot } from 'react-hot-loader/root';
+import {hot} from 'react-hot-loader/root';
 
-const App = () => (
-    <div>Hello leboilerplate !</div>
-)
+const App = () => {
+    return (
+        <div css={{ color :'green'}}>Hello leerplate !</div>
+    )
+}
+
 
 export default hot(App)

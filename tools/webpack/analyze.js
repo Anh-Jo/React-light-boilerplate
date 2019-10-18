@@ -1,13 +1,11 @@
-const {ProvidePlugin} = require("webpack")
-
 const path = require('path');
 const appPath = require('./path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: [
-        '@babel/polyfill',
-        "react-hot-loader/patch",
         path.resolve(__dirname, appPath.srcPath),
     ],
     output: {
@@ -29,15 +27,9 @@ module.exports = {
             filename: path.resolve(__dirname, `${appPath.buildPath}/index.html`),
             template: path.resolve(__dirname, appPath.htmlTemplate)
         }),
-        new ProvidePlugin({
-            Glamor: 'glamor/react'
-        })
+        new BundleAnalyzerPlugin()
     ],
     resolve: {
         extensions: ['.js', '.jsx'],
     },
-    devServer: {
-        contentBase: '/src',
-        port: 3000
-    }
 };

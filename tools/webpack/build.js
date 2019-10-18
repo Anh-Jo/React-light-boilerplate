@@ -1,3 +1,5 @@
+const {ProvidePlugin} = require("webpack")
+
 const path = require('path');
 const appPath = require('./path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -24,6 +26,9 @@ module.exports = {
             hash: true,
             filename: path.resolve(__dirname, `${appPath.buildPath}/index.html`),
             template: path.resolve(__dirname, appPath.htmlTemplate)
+        }),
+        new ProvidePlugin({
+            Glamor: 'glamor/react'
         })
     ],
     resolve: {
