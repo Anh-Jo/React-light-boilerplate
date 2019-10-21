@@ -21,6 +21,11 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
+            {
+                test: /\.(js|jsx)$/,
+                use: 'react-hot-loader/webpack',
+                include: /node_modules/
+            }
         ],
     },
     plugins: [
