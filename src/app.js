@@ -1,17 +1,12 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import {hot} from 'react-hot-loader/root';
-const LazyLay  = React.lazy(() => import('./LazyImport'));
+import {BrowserRouter} from "react-router-dom"
+import Router from './router'
 
-const App = () => {
-    return (
-        <>
-            <div css={{color: 'green'}}>Hello leerplate !</div>
-            <Suspense fallback={<div/>}>
-                <LazyLay/>
-            </Suspense>
-        </>
-    )
-}
-
+const App = () => (
+    <BrowserRouter>
+        <Router/>
+    </BrowserRouter>
+)
 
 export default hot(App)

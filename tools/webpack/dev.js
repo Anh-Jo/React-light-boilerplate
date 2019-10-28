@@ -13,6 +13,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, appPath.buildPath),
         filename: './[name].bundle.js',
+        publicPath:'/'
     },
     module: {
         rules: [
@@ -43,6 +44,7 @@ module.exports = {
     },
     devServer: {
         contentBase: '/src',
-        port: 3000
+        port: 3000,
+        historyApiFallback:true
     }
 };
