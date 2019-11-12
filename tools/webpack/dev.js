@@ -18,7 +18,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
@@ -42,9 +42,10 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
     },
+    devtool:'source-map',
     devServer: {
         contentBase: '/src',
         port: 3000,
-        historyApiFallback:true
+        historyApiFallback:true,
     }
 };
