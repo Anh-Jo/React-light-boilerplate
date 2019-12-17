@@ -1,5 +1,5 @@
 {
-  "srcPath":"../../src",
+  "srcPath":"../../src/",
   "buildPath": "../../build",
   "htmlTemplate": "../template/index.html"
 }

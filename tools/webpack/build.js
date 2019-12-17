@@ -5,9 +5,7 @@ const appPath = require('./path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'production',
-    entry: [
-        path.resolve(__dirname, appPath.srcPath),
-    ],
+    entry: path.resolve(__dirname, appPath.srcPath),
     output: {
         path: path.resolve(__dirname, appPath.buildPath),
         filename: './[name].bundle.js',
@@ -15,10 +13,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|ts)x?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-            },
+            }
         ],
     },
     plugins: [
@@ -26,16 +24,13 @@ module.exports = {
             hash: true,
             filename: path.resolve(__dirname, `${appPath.buildPath}/index.html`),
             template: path.resolve(__dirname, appPath.htmlTemplate)
-        }),
-        new ProvidePlugin({
-            Glamor: 'glamor/react'
         })
     ],
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx','.ts','.tsx'],
     },
     devServer: {
         contentBase: '/src',
-        port:3000
+        port: 3000
     }
 };

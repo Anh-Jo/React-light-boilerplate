@@ -1,8 +1,13 @@
 import React, {useState} from 'react'
 
-export default () => {
-    const bonjour:String = "Hello"
+interface Props {
+    text:string,
+}
+
+const Text:React.FC<Props> = ({ text }) => {
     return <>
-        {bonjour}
+        Hello : {text}
     </>
 }
+
+export default Text
